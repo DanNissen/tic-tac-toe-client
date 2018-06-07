@@ -7,9 +7,8 @@
 }
 
 .game-cells {
-  border: 3px solid;
+  border: 2px solid;
   border-color: $game-board-border;
-  height: 20px;
   padding-bottom: 30%;
 }
 
@@ -17,12 +16,15 @@
   background-color: $hero-text-color;
   border-color: $game-board-border;
   border-width: thick;
-  margin: auto;
-  padding-bottom: 10px;
-  padding-top: 10px;
+  max-width: 70vw;
 }
 
 .navbar {
   background-color: $hero-text-color;
   padding-top: 20px;
+}
+
+footer {
+  background-color: $game-board-border;
+  padding: 20px;
 }
