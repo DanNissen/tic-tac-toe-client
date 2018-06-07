@@ -1,0 +1,28 @@
+.hero-text {
+  align-items: center;
+  background-color: $game-board-border;
+  color: $hero-text-color;
+  padding: 10px;
+  text-align: center;
+}
+
+.game-cells {
+  border: 3px solid;
+  border-color: $game-board-border;
+  height: 20px;
+  padding-bottom: 30%;
+}
+
+.game-board {
+  background-color: $hero-text-color;
+  border-color: $game-board-border;
+  border-width: thick;
+  margin: auto;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+.navbar {
+  background-color: $hero-text-color;
+  padding-top: 20px;
+}
