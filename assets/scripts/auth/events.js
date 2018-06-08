@@ -5,6 +5,13 @@ const getFormFields = require('../../../lib/get-form-fields')
 const authApi = require('./api')
 const authUi = require('./ui')
 
-module.exports = {
+const onSignUp = (event) => {
+  event.preventDefault()
+  console.log('sign up form clicked')
+  const data = getFormFields(event.target)
+  console.log('data is', data)
+}
 
+module.exports = {
+  onSignUp
 }

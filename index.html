@@ -72,27 +72,24 @@
         </button>
         </div>
         <div class="modal-body">
-          ...
+          Fill out your info and get ready to play!
           <form>
             <div class="form-group">
               <label for="exampleInputEmail1">Email address</label>
-              <input type="email" class="form-control" id="sign-up-InputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-              <small id="sign-up-emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+              <input name="credentials[email]"type="email" class="form-control" id="sign-up-InputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+              <small id="sign-up-emailHelp" class="form-text text-muted">We'll never share your email with anyone else. Or maybe I will because it is stored in an API that I don't control :)</small>
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Password</label>
-              <input type="password" class="form-control" id="sign-up-InputPassword1" placeholder="Password">
+              <input name="credentials[password]"type="password" class="form-control" id="sign-up-InputPassword1" placeholder="Password">
             </div>
-            <div class="form-group form-check">
-              <input type="checkbox" class="form-check-input" id="sign-up-Check1">
-              <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Confirm Password</label>
+              <input name="credentials[password_confirmation]"type="password" class="form-control" id="sign-up-confirm-password" placeholder="Confirm Password">
             </div>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             <button type="submit" class="btn btn-primary">Submit</button>
           </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
         </div>
       </div>
     </div>

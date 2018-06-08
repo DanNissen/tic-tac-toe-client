@@ -9,6 +9,6 @@ const gameEvents = require('./game/events')
 
 $(() => {
   // your JS code goes here
+  $('#sign-up').on('submit', authEvents.onSignUp)
   $('#GAMEBOARD').on('submit', gameEvents.onGridClick)
-  $('#sign-up-form').on('submit', authEvents.onSignUp)
 })
