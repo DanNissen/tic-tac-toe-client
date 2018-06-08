@@ -1,5 +1,5 @@
 'use strict'
-const store = require('../store')
+// const store = require('../store')
 
 const getFormFields = require('../../../lib/get-form-fields')
 const authApi = require('./api')
@@ -15,6 +15,17 @@ const onSignUp = (event) => {
     .catch(authUi.signUpError)
 }
 
+const onSignIn = (event) => {
+  event.preventDefault()
+  console.log('sign in form clicked')
+  const data = getFormFields(event.target)
+  console.log('data is', data)
+  authApi.signIn(data)
+    .then(authUi.signInSuccess)
+    .catch(authUi.signInError)
+}
+
 module.exports = {
-  onSignUp
+  onSignUp,
+  onSignIn
 }

@@ -2,6 +2,7 @@
 
 const signUpSuccess = (response) => {
   console.log('you signed up!', response)
+  $('#sign-up').modal('hide')
   // add visual que for user to see
 }
 
