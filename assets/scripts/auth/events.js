@@ -10,6 +10,9 @@ const onSignUp = (event) => {
   console.log('sign up form clicked')
   const data = getFormFields(event.target)
   console.log('data is', data)
+  authApi.signUp(data)
+    .then(authUi.signUpSuccess)
+    .catch(authUi.signUpError)
 }
 
 module.exports = {
