@@ -34,11 +34,22 @@ const changePasswordError = (changePasswordError) => {
   console.log('changePasswordError is', changePasswordError)
 }
 
+const logOutSuccess = (response) => {
+  console.log('you successfully signed out')
+  $('#log-out').modal('hide')
+}
+
+const logOutError = (logOutError) => {
+  console.log('signOutError is', logOutError)
+}
+
 module.exports = {
   signUpSuccess,
   signUpError,
   signInError,
   signInSuccess,
   changePasswordSuccess,
-  changePasswordError
+  changePasswordError,
+  logOutSuccess,
+  logOutError
 }

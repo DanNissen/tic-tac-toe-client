@@ -35,8 +35,17 @@ const onChangePassword = (event) => {
     .catch(authUi.changePasswordError)
 }
 
+const onLogOut = (event) => {
+  console.log('the log out button was clicked')
+  event.preventDefault()
+  authApi.logOut()
+    .then(authUi.logOutSuccess)
+    .catch(authUi.logOutError)
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
-  onChangePassword
+  onChangePassword,
+  onLogOut
 }

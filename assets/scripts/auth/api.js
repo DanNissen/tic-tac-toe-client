@@ -33,10 +33,19 @@ const changePassword = (data) => {
 }
 
 const logOut = () => {
-
+  console.log('token is ', store.user.token)
+  return $.ajax({
+    method: 'DELETE',
+    url: config.apiUrl + 'sign-out',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
 }
+
 module.exports = {
   signUp,
   signIn,
-  changePassword
+  changePassword,
+  logOut
 }
