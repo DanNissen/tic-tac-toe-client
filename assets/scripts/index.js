@@ -8,4 +8,5 @@
 
 $(() => {
   // your JS code goes here
+
 })
