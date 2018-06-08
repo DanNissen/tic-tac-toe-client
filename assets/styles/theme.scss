@@ -7,9 +7,12 @@
 }
 
 .game-cells {
+  align-content: center;
   border: 2px solid;
   border-color: $game-board-border;
-  padding-bottom: 30%;
+  font-weight: bold;
+  padding-bottom: 15%;
+  padding-top: 15%;
 }
 
 .game-board {
