@@ -135,27 +135,19 @@
         </button>
         </div>
         <div class="modal-body">
-          ...
+          Change Your Password Here
           <form>
             <div class="form-group">
-              <label for="exampleInputEmail1">Email address</label>
-              <input type="email" class="form-control" id="change-password-InputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-              <small id="change-password-emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+              <label for="InputOldPassword">Old Password</label>
+              <input name="passwords[old]"type="password" class="form-control" id="change-password-InputOldPassword" placeholder="Enter Old Password">
             </div>
             <div class="form-group">
-              <label for="exampleInputPassword1">Password</label>
-              <input type="password" class="form-control" id="change-password-InputPassword1" placeholder="Password">
-            </div>
-            <div class="form-group form-check">
-              <input type="checkbox" class="form-check-input" id="change-password-Check1">
-              <label class="form-check-label" for="exampleCheck1">Check me out</label>
+              <label for="InputNewPassword">New Password</label>
+              <input name="passwords[new]"type="password" class="form-control" id="change-password-InputNewPassword" placeholder="Enter New Password">
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
           </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
         </div>
       </div>
     </div>

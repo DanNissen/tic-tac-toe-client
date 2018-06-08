@@ -25,7 +25,18 @@ const onSignIn = (event) => {
     .catch(authUi.signInError)
 }
 
+const onChangePassword = (event) => {
+  event.preventDefault()
+  console.log('the change password form was submitted')
+  const data = getFormFields(event.target)
+  console.log('data is', data)
+  authApi.changePassword(data)
+    .then(authUi.changePasswordSuccess)
+    .catch(authUi.changePasswordError)
+}
+
 module.exports = {
   onSignUp,
-  onSignIn
+  onSignIn,
+  onChangePassword
 }
