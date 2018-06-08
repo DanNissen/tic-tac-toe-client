@@ -16,7 +16,6 @@
   background-color: $hero-text-color;
   border-color: $game-board-border;
   border-width: thick;
-  max-width: 70vw;
 }
 
 .navbar {
@@ -27,4 +26,22 @@
 footer {
   background-color: $game-board-border;
   padding: 20px;
+}
+
+.main-content {
+  align-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.player-o-content {
+  align-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.player-x-content {
+  align-content: center;
+  align-items: center;
+  text-align: center;
 }
