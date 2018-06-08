@@ -11,7 +11,19 @@ const signUpError = (response) => {
   // add visual que for user to see
 }
 
+const signInError = () => {
+  console.log('sign in error')
+  // add visual que for user to see
+}
+
+const signInSuccess = (response) => {
+  console.log('you signed in!', response)
+  $('#sign-in').modal('hide')
+  // add visual que for user to see
+}
 module.exports = {
   signUpSuccess,
-  signUpError
+  signUpError,
+  signInError,
+  signInSuccess
 }
