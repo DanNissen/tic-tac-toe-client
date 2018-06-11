@@ -19,18 +19,31 @@ const signInError = () => {
 }
 
 const signInSuccessX = (response) => {
-  store.user = response.user
-  console.log('you signed in!', store.user)
+  store.player_x = response.user
+  console.log('you signed in! Player X', store.player_x)
   $('#sign-in-x').modal('hide')
   // add visual que for user to see
   $('.player-x-change-password').css('visibility', 'visible')
   $('.player-x-log-out').css('visibility', 'visible')
   $('.player-x-sign-in').css('visibility', 'hidden')
 }
+const signInSuccessO = (response) => {
+  store.player_o = response.user
+  console.log('you signed in! Player O', store.player_o)
+  $('#sign-in-o').modal('hide')
+  // add visual que for user to see
+  $('.player-o-change-password').css('visibility', 'visible')
+  $('.player-o-log-out').css('visibility', 'visible')
+  $('.player-o-sign-in').css('visibility', 'hidden')
+}
 
 const changePasswordSuccessX = (response) => {
-  console.log('you successfully changed the password')
+  console.log('you successfully changed the password Player X')
   $('#change-password-x').modal('hide')
+}
+const changePasswordSuccessO = (response) => {
+  console.log('you successfully changed the password Player O')
+  $('#change-password-o').modal('hide')
 }
 
 const changePasswordError = (changePasswordError) => {
@@ -44,6 +57,13 @@ const logOutSuccessX = (response) => {
   $('.player-x-log-out').css('visibility', 'hidden')
   $('.player-x-sign-in').css('visibility', 'visible')
 }
+const logOutSuccessO = (response) => {
+  console.log('you successfully signed out Player O')
+  $('#log-out-o').modal('hide')
+  $('.player-o-change-password').css('visibility', 'hidden')
+  $('.player-o-log-out').css('visibility', 'hidden')
+  $('.player-o-sign-in').css('visibility', 'visible')
+}
 
 const logOutError = (logOutError) => {
   console.log('signOutError is', logOutError)
@@ -54,8 +74,11 @@ module.exports = {
   signUpError,
   signInError,
   signInSuccessX,
+  signInSuccessO,
   changePasswordSuccessX,
+  changePasswordSuccessO,
   changePasswordError,
   logOutSuccessX,
+  logOutSuccessO,
   logOutError
 }

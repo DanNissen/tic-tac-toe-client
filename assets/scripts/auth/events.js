@@ -24,6 +24,15 @@ const onSignInX = (event) => {
     .then(authUi.signInSuccessX)
     .catch(authUi.signInError)
 }
+const onSignInO = (event) => {
+  event.preventDefault()
+  console.log('Player X sign in form clicked')
+  const data = getFormFields(event.target)
+  console.log('data is', data)
+  authApi.signInO(data)
+    .then(authUi.signInSuccessO)
+    .catch(authUi.signInError)
+}
 
 const onChangePasswordX = (event) => {
   event.preventDefault()
@@ -34,6 +43,15 @@ const onChangePasswordX = (event) => {
     .then(authUi.changePasswordSuccessX)
     .catch(authUi.changePasswordError)
 }
+const onChangePasswordO = (event) => {
+  event.preventDefault()
+  console.log('the change password form for player o was submitted')
+  const data = getFormFields(event.target)
+  console.log('data is', data)
+  authApi.changePasswordO(data)
+    .then(authUi.changePasswordSuccessO)
+    .catch(authUi.changePasswordError)
+}
 
 const onLogOutX = (event) => {
   console.log('the log out player x button was clicked')
@@ -42,10 +60,20 @@ const onLogOutX = (event) => {
     .then(authUi.logOutSuccessX)
     .catch(authUi.logOutError)
 }
+const onLogOutO = (event) => {
+  console.log('the log out player x button was clicked')
+  event.preventDefault()
+  authApi.logOutO()
+    .then(authUi.logOutSuccessO)
+    .catch(authUi.logOutError)
+}
 
 module.exports = {
   onSignUp,
   onSignInX,
   onChangePasswordX,
-  onLogOutX
+  onLogOutX,
+  onSignInO,
+  onChangePasswordO,
+  onLogOutO
 }

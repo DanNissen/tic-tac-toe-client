@@ -15,9 +15,9 @@ $(() => {
   $('#change-password-x').on('submit', authEvents.onChangePasswordX)
   $('#log-out-x').on('submit', authEvents.onLogOutX)
   // player o
-  // $('#sign-in-o').on('submit', authEvents.onSignIn)
-  // $('#change-password-o').on('submit', authEvents.onChangePassword)
-  // $('#log-out-o').on('submit', authEvents.onLogOut)
+  $('#sign-in-o').on('submit', authEvents.onSignInO)
+  $('#change-password-o').on('submit', authEvents.onChangePasswordO)
+  $('#log-out-o').on('submit', authEvents.onLogOutO)
   // gameBoard
   $('#game-board').click(gameEvents.onClick)
   $(':button').addClass('play-again').click(gameEvents.onPlayAgain)
