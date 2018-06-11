@@ -24,7 +24,7 @@ const markCell = (cellId) => {
   gameBoard[(cellId - 1)] = store.player
   $('#' + cellId).text(store.player)
   $('.game-cells').css('visibility', 'visible')
-  console.log(gameBoard)
+  // console.log(gameBoard)
 }
 
 const switchPlayer = () => {

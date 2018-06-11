@@ -15,37 +15,37 @@ const onSignUp = (event) => {
     .catch(authUi.signUpError)
 }
 
-const onSignIn = (event) => {
+const onSignInX = (event) => {
   event.preventDefault()
-  console.log('sign in form clicked')
+  console.log('Player X sign in form clicked')
   const data = getFormFields(event.target)
   console.log('data is', data)
-  authApi.signIn(data)
-    .then(authUi.signInSuccess)
+  authApi.signInX(data)
+    .then(authUi.signInSuccessX)
     .catch(authUi.signInError)
 }
 
-const onChangePassword = (event) => {
+const onChangePasswordX = (event) => {
   event.preventDefault()
-  console.log('the change password form was submitted')
+  console.log('the change password form for player x was submitted')
   const data = getFormFields(event.target)
   console.log('data is', data)
-  authApi.changePassword(data)
-    .then(authUi.changePasswordSuccess)
+  authApi.changePasswordX(data)
+    .then(authUi.changePasswordSuccessX)
     .catch(authUi.changePasswordError)
 }
 
-const onLogOut = (event) => {
-  console.log('the log out button was clicked')
+const onLogOutX = (event) => {
+  console.log('the log out player x button was clicked')
   event.preventDefault()
-  authApi.logOut()
-    .then(authUi.logOutSuccess)
+  authApi.logOutX()
+    .then(authUi.logOutSuccessX)
     .catch(authUi.logOutError)
 }
 
 module.exports = {
   onSignUp,
-  onSignIn,
-  onChangePassword,
-  onLogOut
+  onSignInX,
+  onChangePasswordX,
+  onLogOutX
 }

@@ -11,7 +11,7 @@ const signUp = (data) => {
   })
 }
 
-const signIn = (data) => {
+const signInX = (data) => {
   console.log('data passed to sign in api is', data)
   return $.ajax({
     method: 'POST',
@@ -20,7 +20,7 @@ const signIn = (data) => {
   })
 }
 
-const changePassword = (data) => {
+const changePasswordX = (data) => {
   console.log('token is ', store.user.token)
   return $.ajax({
     method: 'PATCH',
@@ -32,7 +32,7 @@ const changePassword = (data) => {
   })
 }
 
-const logOut = () => {
+const logOutX = () => {
   console.log('token is ', store.user.token)
   return $.ajax({
     method: 'DELETE',
@@ -45,7 +45,7 @@ const logOut = () => {
 
 module.exports = {
   signUp,
-  signIn,
-  changePassword,
-  logOut
+  signInX,
+  changePasswordX,
+  logOutX
 }

@@ -3,7 +3,7 @@ const store = require('../store')
 
 const winMessage = () => {
   $('#winner').modal('show')
-  console.log(store.player)
+  // console.log(store.player)
   $('#winning-player').text(`Winner is ${store.player}`)
 }
 

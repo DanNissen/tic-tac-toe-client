@@ -27,13 +27,13 @@
     <div class="row">
       <div class="h-100 col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 player-x-content">
         PLAYER X <br>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#sign-in">
+        <button type="button" class="btn btn-primary player-x-sign-in" data-toggle="modal" data-target="#sign-in-x">
           Sign In
         </button> <br>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#change-password">
+        <button type="button" class="btn btn-primary player-x-change-password" data-toggle="modal" data-target="#change-password-x">
           change-password
         </button> <br>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#log-out">
+        <button type="button" class="btn btn-primary player-x-log-out" data-toggle="modal" data-target="#log-out-x">
           log-out
         </button>
       </div>
@@ -56,13 +56,13 @@
       </div>
       <div class="h-100 col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 player-o-content">
         PLAYER O <br>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#sign-in">
+        <button type="button" class="btn btn-primary player-o-sign-in" data-toggle="modal" data-target="#sign-in-o">
           Sign In
         </button> <br>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#change-password">
+        <button type="button" class="btn btn-primary player-o-change-password" data-toggle="modal" data-target="#change-password-o">
           change-password
         </button> <br>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#log-out">
+        <button type="button" class="btn btn-primary player-o-log-out" data-toggle="modal" data-target="#log-out-o">
           log-out
         </button>
       </div>
@@ -102,12 +102,12 @@
     </div>
   </div>
 
-  <!-- sign in Modal -->
-  <div class="modal fade" id="sign-in" tabindex="-1" role="dialog" aria-labelledby="sign-in" aria-hidden="true">
+  <!-- sign in X Modal -->
+  <div class="modal fade" id="sign-in-x" tabindex="-1" role="dialog" aria-labelledby="sign-in" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="sign-in-ModalLabel">Sign In</h5>
+          <h5 class="modal-title" id="sign-in-x-ModalLabel">Sign In as Player X</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -117,11 +117,11 @@
           <form>
             <div class="form-group">
               <label for="sign-in-InputEmail1">Email address</label>
-              <input name="credentials[email]" type="email" class="form-control" id="sign-in-InputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+              <input name="credentials[email]" type="email" class="form-control" id="sign-in-x-InputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
             </div>
             <div class="form-group">
               <label for="sign-in-InputPassword1">Password</label>
-              <input name="credentials[password]" type="password" class="form-control" id="sign-in-InputPassword1" placeholder="Password">
+              <input name="credentials[password]" type="password" class="form-control" id="sign-in-x-InputPassword1" placeholder="Password">
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -131,12 +131,12 @@
     </div>
   </div>
 
-  <!-- change password Modal -->
-  <div class="modal fade" id="change-password" tabindex="-1" role="dialog" aria-labelledby="change-password" aria-hidden="true">
+  <!-- change password X Modal -->
+  <div class="modal fade" id="change-password-x" tabindex="-1" role="dialog" aria-labelledby="change-password" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="change-password-modal-label">Change Password</h5>
+          <h5 class="modal-title" id="change-password-x-modal-label">Change Password</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -146,11 +146,11 @@
           <form>
             <div class="form-group">
               <label for="InputOldPassword">Old Password</label>
-              <input name="passwords[old]"type="password" class="form-control" id="change-password-InputOldPassword" placeholder="Enter Old Password">
+              <input name="passwords[old]"type="password" class="form-control" id="change-password-x-InputOldPassword" placeholder="Enter Old Password">
             </div>
             <div class="form-group">
               <label for="InputNewPassword">New Password</label>
-              <input name="passwords[new]"type="password" class="form-control" id="change-password-InputNewPassword" placeholder="Enter New Password">
+              <input name="passwords[new]"type="password" class="form-control" id="change-password-x-InputNewPassword" placeholder="Enter New Password">
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -160,18 +160,97 @@
     </div>
   </div>
 
-  <!-- log out Modal -->
-  <div class="modal fade" id="log-out" tabindex="-1" role="dialog" aria-labelledby="log-out" aria-hidden="true">
+  <!-- log out X Modal -->
+  <div class="modal fade" id="log-out-x" tabindex="-1" role="dialog" aria-labelledby="log-out" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="log-out-ModalLabel">Log Out</h5>
+          <h5 class="modal-title" id="log-out-x-ModalLabel">Log Out</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
-          Are you sure you want to sign out?
+          Are you sure you want to sign out, player X?
+          <form>
+            <button type="submit" class="btn btn-primary">Sign Out</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- sign in O Modal -->
+  <div class="modal fade" id="sign-in-o" tabindex="-1" role="dialog" aria-labelledby="sign-in" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="sign-in-o-ModalLabel">Sign In as Player O</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+        <div class="modal-body">
+          Fill in the form to Sign In!
+          <form>
+            <div class="form-group">
+              <label for="sign-in-InputEmail1">Email address</label>
+              <input name="credentials[email]" type="email" class="form-control" id="sign-in-o-InputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+              <label for="sign-in-InputPassword1">Password</label>
+              <input name="credentials[password]" type="password" class="form-control" id="sign-in-o-InputPassword1" placeholder="Password">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- change password O Modal -->
+  <div class="modal fade" id="change-password-o" tabindex="-1" role="dialog" aria-labelledby="change-password" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="change-password-o-modal-label">Change Password</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+        <div class="modal-body">
+          Change Your Password Here
+          <form>
+            <div class="form-group">
+              <label for="InputOldPassword">Old Password</label>
+              <input name="passwords[old]"type="password" class="form-control" id="change-password-o-InputOldPassword" placeholder="Enter Old Password">
+            </div>
+            <div class="form-group">
+              <label for="InputNewPassword">New Password</label>
+              <input name="passwords[new]"type="password" class="form-control" id="change-password-o-InputNewPassword" placeholder="Enter New Password">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- log out O Modal -->
+  <div class="modal fade" id="log-out-o" tabindex="-1" role="dialog" aria-labelledby="log-out" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="log-out-o-ModalLabel">Log Out</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Are you sure you want to sign out, player O?
           <form>
             <button type="button" class="btn btn-primary">Sign Out</button>
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
@@ -180,6 +259,7 @@
       </div>
     </div>
   </div>
+
 
 <!-- you have won Modal -->
 <div class="modal" id="winner" tabindex="-1" role="dialog">

@@ -18,25 +18,31 @@ const signInError = () => {
   // add visual que for user to see
 }
 
-const signInSuccess = (response) => {
+const signInSuccessX = (response) => {
   store.user = response.user
   console.log('you signed in!', store.user)
-  $('#sign-in').modal('hide')
+  $('#sign-in-x').modal('hide')
   // add visual que for user to see
+  $('.player-x-change-password').css('visibility', 'visible')
+  $('.player-x-log-out').css('visibility', 'visible')
+  $('.player-x-sign-in').css('visibility', 'hidden')
 }
 
-const changePasswordSuccess = (response) => {
+const changePasswordSuccessX = (response) => {
   console.log('you successfully changed the password')
-  $('#change-password').modal('hide')
+  $('#change-password-x').modal('hide')
 }
 
 const changePasswordError = (changePasswordError) => {
   console.log('changePasswordError is', changePasswordError)
 }
 
-const logOutSuccess = (response) => {
+const logOutSuccessX = (response) => {
   console.log('you successfully signed out')
-  $('#log-out').modal('hide')
+  $('#log-out-x').modal('hide')
+  $('.player-x-change-password').css('visibility', 'hidden')
+  $('.player-x-log-out').css('visibility', 'hidden')
+  $('.player-x-sign-in').css('visibility', 'visible')
 }
 
 const logOutError = (logOutError) => {
@@ -47,9 +53,9 @@ module.exports = {
   signUpSuccess,
   signUpError,
   signInError,
-  signInSuccess,
-  changePasswordSuccess,
+  signInSuccessX,
+  changePasswordSuccessX,
   changePasswordError,
-  logOutSuccess,
+  logOutSuccessX,
   logOutError
 }
