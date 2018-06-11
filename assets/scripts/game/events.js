@@ -12,8 +12,10 @@ const onClick = () => {
     gameLogic.markCell(cellId)
     gameLogic.checkForWin()
     gameLogic.switchPlayer()
+    console.log(gameLogic.gameBoard)
   } else {
     gameLogic.moveNotAllowed()
+    console.log(gameLogic.gameBoard)
   }
 }
 
