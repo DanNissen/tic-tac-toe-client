@@ -6,14 +6,14 @@ const store = require('../store')
 // gameboard is a 3x3 grid composed of 9 html divs
 // divs are numbered 1-9 and are always in same placeholder
 // gameboard can be represented by an array index 0-8
-let gameBoard = ['', '', '', '', '', '', '', '', '']
+store.gameBoard = ['', '', '', '', '', '', '', '', '']
 
 // let player = 'x'
 
 // check to see if cell is empty
 const isEmpty = (cellId) => {
   // console.log('player', player, 'clicked on cell', cellId)
-  if (gameBoard[(cellId - 1)] === '') {
+  if (store.gameBoard[(cellId - 1)] === '') {
     return true
   } else {
     return false
@@ -21,7 +21,7 @@ const isEmpty = (cellId) => {
 }
 // push value to array & mark cell
 const markCell = (cellId) => {
-  gameBoard[(cellId - 1)] = store.player
+  store.gameBoard[(cellId - 1)] = store.player
   $('#' + cellId).text(store.player)
   $('.game-cells').css('visibility', 'visible')
   // console.log(gameBoard)
@@ -35,24 +35,24 @@ const switchPlayer = () => {
   }
 }
 
-const checkForWin = (currentPlayer) => {
-  if (gameBoard[0] === store.player && gameBoard[1] === store.player && gameBoard[2] === store.player) {
+const checkForWin = () => {
+  if (store.gameBoard[0] === store.player && store.gameBoard[1] === store.player && store.gameBoard[2] === store.player) {
     gameUi.winMessage()
-  } else if (gameBoard[3] === store.player && gameBoard[4] === store.player && gameBoard[5] === store.player) {
+  } else if (store.gameBoard[3] === store.player && store.gameBoard[4] === store.player && store.gameBoard[5] === store.player) {
     gameUi.winMessage()
-  } else if (gameBoard[6] === store.player && gameBoard[7] === store.player && gameBoard[8] === store.player) {
+  } else if (store.gameBoard[6] === store.player && store.gameBoard[7] === store.player && store.gameBoard[8] === store.player) {
     gameUi.winMessage()
-  } else if (gameBoard[0] === store.player && gameBoard[3] === store.player && gameBoard[6] === store.player) {
+  } else if (store.gameBoard[0] === store.player && store.gameBoard[3] === store.player && store.gameBoard[6] === store.player) {
     gameUi.winMessage()
-  } else if (gameBoard[1] === store.player && gameBoard[4] === store.player && gameBoard[7] === store.player) {
+  } else if (store.gameBoard[1] === store.player && store.gameBoard[4] === store.player && store.gameBoard[7] === store.player) {
     gameUi.winMessage()
-  } else if (gameBoard[2] === store.player && gameBoard[5] === store.player && gameBoard[8] === store.player) {
+  } else if (store.gameBoard[2] === store.player && store.gameBoard[5] === store.player && store.gameBoard[8] === store.player) {
     gameUi.winMessage()
-  } else if (gameBoard[0] === store.player && gameBoard[4] === store.player && gameBoard[8] === store.player) {
+  } else if (store.gameBoard[0] === store.player && store.gameBoard[4] === store.player && store.gameBoard[8] === store.player) {
     gameUi.winMessage()
-  } else if (gameBoard[2] === store.player && gameBoard[4] === store.player && gameBoard[6] === store.player) {
+  } else if (store.gameBoard[2] === store.player && store.gameBoard[4] === store.player && store.gameBoard[6] === store.player) {
     gameUi.winMessage()
-  } else if (gameBoard.includes('') === false) {
+  } else if (store.gameBoard.includes('') === false) {
     gameUi.drawMessage()
   }
 }
@@ -65,13 +65,12 @@ const moveNotAllowed = () => {
 const gameReset = () => {
   // reset the game
   $('.game-cells').text('.')
-  gameBoard = ['', '', '', '', '', '', '', '', '']
+  store.gameBoard = ['', '', '', '', '', '', '', '', '']
   store.player = 'x'
 }
 
 module.exports = {
   switchPlayer,
-  gameBoard,
   checkForWin,
   // player,
   isEmpty,

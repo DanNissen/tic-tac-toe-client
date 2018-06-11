@@ -20,6 +20,7 @@ $(() => {
   $('#log-out-o').on('submit', authEvents.onLogOutO)
   // gameBoard
   $('#game-board').click(gameEvents.onClick)
-  $(':button').addClass('play-again').click(gameEvents.onPlayAgain)
-  $(':button').addClass('start-game').click(gameEvents.onStartGame)
+  $('#won-play-again').click(gameEvents.onPlayAgain)
+  $('#draw-play-again').click(gameEvents.onPlayAgain)
+  $('#start-game').click(gameEvents.onStartGame)
 })
