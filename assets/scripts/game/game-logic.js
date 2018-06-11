@@ -1,16 +1,18 @@
 'use strict'
 // const gameEvents = require('./events')
 const gameUi = require('./ui')
+const store = require('../store')
+
 // gameboard is a 3x3 grid composed of 9 html divs
 // divs are numbered 1-9 and are always in same placeholder
 // gameboard can be represented by an array index 0-8
 let gameBoard = ['', '', '', '', '', '', '', '', '']
 
-let player = 'x'
+// let player = 'x'
 
 // check to see if cell is empty
 const isEmpty = (cellId) => {
-  console.log('player', player, 'clicked on cell', cellId)
+  // console.log('player', player, 'clicked on cell', cellId)
   if (gameBoard[(cellId - 1)] === '') {
     return true
   } else {
@@ -19,48 +21,38 @@ const isEmpty = (cellId) => {
 }
 // push value to array & mark cell
 const markCell = (cellId) => {
-  gameBoard[(cellId - 1)] = player
-  $('#' + cellId).text(player)
+  gameBoard[(cellId - 1)] = store.player
+  $('#' + cellId).text(store.player)
+  $('.game-cells').css('visibility', 'visible')
   console.log(gameBoard)
 }
 
 const switchPlayer = () => {
-  if (player === 'x') {
-    player = 'o'
-  } else if (player === 'o') {
-    player = 'x'
+  if (store.player === 'x') {
+    store.player = 'o'
+  } else if (store.player === 'o') {
+    store.player = 'x'
   }
 }
 
-const checkForWin = () => {
-  if (gameBoard[0] === player && gameBoard[1] === player && gameBoard[2] === player) {
-    console.log(player, 'has won the game!!')
-    // Do something with ui to show that player has won the game.
+const checkForWin = (currentPlayer) => {
+  if (gameBoard[0] === store.player && gameBoard[1] === store.player && gameBoard[2] === store.player) {
     gameUi.winMessage()
-  } else if (gameBoard[3] === player && gameBoard[4] === player && gameBoard[5] === player) {
-    console.log(player, 'has won the game!!')
+  } else if (gameBoard[3] === store.player && gameBoard[4] === store.player && gameBoard[5] === store.player) {
     gameUi.winMessage()
-  } else if (gameBoard[6] === player && gameBoard[7] === player && gameBoard[8] === player) {
-    console.log(player, 'has won the game!!')
+  } else if (gameBoard[6] === store.player && gameBoard[7] === store.player && gameBoard[8] === store.player) {
     gameUi.winMessage()
-  } else if (gameBoard[0] === player && gameBoard[3] === player && gameBoard[6] === player) {
-    console.log(player, 'has won the game!!')
+  } else if (gameBoard[0] === store.player && gameBoard[3] === store.player && gameBoard[6] === store.player) {
     gameUi.winMessage()
-  } else if (gameBoard[1] === player && gameBoard[4] === player && gameBoard[7] === player) {
-    console.log(player, 'has won the game!!')
+  } else if (gameBoard[1] === store.player && gameBoard[4] === store.player && gameBoard[7] === store.player) {
     gameUi.winMessage()
-  } else if (gameBoard[2] === player && gameBoard[5] === player && gameBoard[8] === player) {
-    console.log(player, 'has won the game!!')
+  } else if (gameBoard[2] === store.player && gameBoard[5] === store.player && gameBoard[8] === store.player) {
     gameUi.winMessage()
-  } else if (gameBoard[0] === player && gameBoard[4] === player && gameBoard[8] === player) {
-    console.log(player, 'has won the game!!')
+  } else if (gameBoard[0] === store.player && gameBoard[4] === store.player && gameBoard[8] === store.player) {
     gameUi.winMessage()
-  } else if (gameBoard[2] === player && gameBoard[4] === player && gameBoard[6] === player) {
-    console.log(player, 'has won the game!!')
+  } else if (gameBoard[2] === store.player && gameBoard[4] === store.player && gameBoard[6] === store.player) {
     gameUi.winMessage()
   } else if (gameBoard.includes('') === false) {
-    console.log('the game is a draw! Both players are losers')
-    // do something with the ui to show game is a draw
     gameUi.drawMessage()
   }
 }
@@ -74,14 +66,14 @@ const gameReset = () => {
   // reset the game
   $('.game-cells').text('.')
   gameBoard = ['', '', '', '', '', '', '', '', '']
-  player = 'x'
+  store.player = 'x'
 }
 
 module.exports = {
   switchPlayer,
   gameBoard,
   checkForWin,
-  player,
+  // player,
   isEmpty,
   markCell,
   moveNotAllowed,

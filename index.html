@@ -15,23 +15,10 @@
 
 <body>
   <nav class="navbar navbar-light bg-light">
-    <a class="navbar-brand">Navbar</a>
-
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#sign-up">
       Sign Up
     </button>
-
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#sign-in">
-      Sign In
-    </button>
-
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#change-password">
-      change-password
-    </button>
-
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#log-out">
-      log-out
-    </button>
+    <button type="button" class="btn btn-primary start-game">Start Game</button>
   </nav>
 
   <h1 class="hero-text">#TicTacToe</h1>
@@ -39,7 +26,16 @@
   <div class="main-content container-fluid">
     <div class="row">
       <div class="h-100 col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 player-x-content">
-        THIS IS WHERE X GOES
+        PLAYER X <br>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#sign-in">
+          Sign In
+        </button> <br>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#change-password">
+          change-password
+        </button> <br>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#log-out">
+          log-out
+        </button>
       </div>
       <div id="game-board" class="h-100 game-board col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
         <div class="top-row">
@@ -59,7 +55,16 @@
         </div>
       </div>
       <div class="h-100 col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 player-o-content">
-        THIS IS WHERE O GOES
+        PLAYER O <br>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#sign-in">
+          Sign In
+        </button> <br>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#change-password">
+          change-password
+        </button> <br>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#log-out">
+          log-out
+        </button>
       </div>
     </div>
   </div>
@@ -187,7 +192,8 @@
         </button>
       </div>
       <div class="modal-body">
-        <p>Congrats you have won, would you like to play again?</p>
+        <p id="winner-text">Congrats you have won, would you like to play again?</p>
+        <p id="winning-player"></p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary play-again">Play Again?</button>

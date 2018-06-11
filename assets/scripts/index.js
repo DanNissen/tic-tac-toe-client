@@ -16,4 +16,5 @@ $(() => {
   $('#game-board').click(gameEvents.onClick)
   // $('#winner').on('submit', gameEvents.onPlayAgain)
   $(':button').addClass('play-again').click(gameEvents.onPlayAgain)
+  $(':button').addClass('start-game').click(gameEvents.onStartGame)
 })

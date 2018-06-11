@@ -19,6 +19,7 @@
   background-color: $hero-text-color;
   border-color: $game-board-border;
   border-width: thick;
+  visibility: hidden;
 }
 
 .navbar {
@@ -29,6 +30,12 @@
 footer {
   background-color: $game-board-border;
   padding: 20px;
+  text-align: center;
+}
+
+nav {
+  align-items: center;
+  text-align: center;
 }
 
 .main-content {

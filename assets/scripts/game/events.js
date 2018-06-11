@@ -18,13 +18,18 @@ const onClick = () => {
 }
 
 const onPlayAgain = () => {
-  console.log('user clicked play again')
+  // console.log('user clicked play again')
   gameLogic.gameReset()
   $('#draw').modal('hide')
   $('#winner').modal('hide')
 }
 
+const onStartGame = () => {
+  $('.game-board').css('visibility', 'visible')
+}
+
 module.exports = {
   onClick,
-  onPlayAgain
+  onPlayAgain,
+  onStartGame
 }
