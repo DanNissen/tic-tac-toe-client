@@ -21,7 +21,7 @@ const isEmpty = (cellId) => {
 const markCell = (cellId) => {
   gameBoard[(cellId - 1)] = player
   $('#' + cellId).text(player)
-  // console.log(gameBoard)
+  console.log(gameBoard)
 }
 
 const switchPlayer = () => {
@@ -70,11 +70,12 @@ const moveNotAllowed = () => {
   // do something with ui to show user that the click is not allowed
 }
 
-// const gameReset = () => {
-//   reset the game
-//   $('.game-cells').text('.')
-//   gameBoard = ['', '', '', '', '', '', '', '', '']
-// }
+const gameReset = () => {
+  // reset the game
+  $('.game-cells').text('.')
+  gameBoard = ['', '', '', '', '', '', '', '', '']
+  player = 'x'
+}
 
 module.exports = {
   switchPlayer,
@@ -83,5 +84,6 @@ module.exports = {
   player,
   isEmpty,
   markCell,
-  moveNotAllowed
+  moveNotAllowed,
+  gameReset
 }

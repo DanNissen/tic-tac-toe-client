@@ -12,13 +12,19 @@ const onClick = () => {
     gameLogic.markCell(cellId)
     gameLogic.checkForWin()
     gameLogic.switchPlayer()
-    console.log(gameLogic.gameBoard)
   } else {
     gameLogic.moveNotAllowed()
-    console.log(gameLogic.gameBoard)
   }
 }
 
+const onPlayAgain = () => {
+  console.log('user clicked play again')
+  gameLogic.gameReset()
+  $('#draw').modal('hide')
+  $('#winner').modal('hide')
+}
+
 module.exports = {
-  onClick
+  onClick,
+  onPlayAgain
 }

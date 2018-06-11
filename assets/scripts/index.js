@@ -14,4 +14,6 @@ $(() => {
   $('#change-password').on('submit', authEvents.onChangePassword)
   $('#log-out').on('submit', authEvents.onLogOut)
   $('#game-board').click(gameEvents.onClick)
+  // $('#winner').on('submit', gameEvents.onPlayAgain)
+  $(':button').addClass('play-again').click(gameEvents.onPlayAgain)
 })
