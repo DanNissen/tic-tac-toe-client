@@ -24,7 +24,7 @@ const onSignInX = (event) => {
   authApi.signInX(data)
     .then(authUi.signInSuccessX)
     .then(gameLogic.grabOverGames)
-    .then(gameLogic.calculateWinsNumber)
+    .then(gameLogic.calculateWinsNumberX)
     .catch(authUi.signInError)
 }
 const onSignInO = (event) => {
@@ -34,6 +34,8 @@ const onSignInO = (event) => {
   console.log('data is', data)
   authApi.signInO(data)
     .then(authUi.signInSuccessO)
+    .then(gameLogic.grabOverGames)
+    .then(gameLogic.calculateWinsNumberO)
     .catch(authUi.signInError)
 }
 
