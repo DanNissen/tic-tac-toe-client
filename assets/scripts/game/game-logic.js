@@ -96,40 +96,64 @@ const gameReset = () => {
 
 const grabOverGames = (response) => {
   console.log(store.player_x)
-  gameApi.getGameByUserOver()
+  return gameApi.getGameByUserOver()
     .then(gameUi.getGamesSuccess)
     .catch(gameUi.getGamesError)
 }
 
-const test = () => {
-  console.log('test log', store.games)
+const calculateWinsNumber = () => {
+  console.log(store.games)
+  let winCount = 0
+  let checkValue = 'x'
+  for (let i = 0; i < store.games.games.length; i++) {
+    // console.log(store.player_x.email)
+    // console.log(store.games.games[i].player_o)
+    if (store.games.games[i].player_o === null) {
+      checkValue = 'x'
+    } else if (store.player_x.email === store.games.games[i].player_o.email) {
+      checkValue = 'o'
+    } else {
+      checkValue = 'x'
+    }
+    if (store.games.games[i].cells[0] === checkValue && store.games.games[i].cells[1] === checkValue && store.games.games[i].cells[2] === checkValue) {
+      winCount = winCount + 1
+      store.player_x.wins = winCount
+      // console.log(store.player_x.wins)
+    } else if (store.games.games[i].cells[3] === checkValue && store.games.games[i].cells[4] === checkValue && store.games.games[i].cells[5] === checkValue) {
+      winCount = winCount + 1
+      store.player_x.wins = winCount
+      // console.log(store.player_x.wins)
+    } else if (store.games.games[i].cells[6] === checkValue && store.games.games[i].cells[7] === checkValue && store.games.games[i].cells[8] === checkValue) {
+      winCount = winCount + 1
+      store.player_x.wins = winCount
+      // console.log(store.player_x.wins)
+    } else if (store.games.games[i].cells[0] === checkValue && store.games.games[i].cells[3] === checkValue && store.games.games[i].cells[6] === checkValue) {
+      winCount = winCount + 1
+      store.player_x.wins = winCount
+      // console.log(store.player_x.wins)
+    } else if (store.games.games[i].cells[1] === checkValue && store.games.games[i].cells[4] === checkValue && store.games.games[i].cells[7] === checkValue) {
+      winCount = winCount + 1
+      store.player_x.wins = winCount
+      // console.log(store.player_x.wins)
+    } else if (store.games.games[i].cells[2] === checkValue && store.games.games[i].cells[5] === checkValue && store.games.games[i].cells[8] === checkValue) {
+      winCount = winCount + 1
+      store.player_x.wins = winCount
+      // console.log(store.player_x.wins)
+    } else if (store.games.games[i].cells[0] === checkValue && store.games.games[i].cells[4] === checkValue && store.games.games[i].cells[8] === checkValue) {
+      winCount = winCount + 1
+      store.player_x.wins = winCount
+      // console.log(store.player_x.wins)
+    } else if (store.games.games[i].cells[2] === checkValue && store.games.games[i].cells[4] === checkValue && store.games.games[i].cells[6] === checkValue) {
+      winCount = winCount + 1
+      store.player_x.wins = winCount
+      // console.log(store.player_x.wins)
+    } else if (store.gameBoard.includes('') === false) {
+      // console.log('not counted as a win', winCount)
+      store.player_x.wins = winCount
+      // console.log(store.player_x.wins)
+    }
+  }
 }
-
-// const calculateWinsNumber = () => {
-//   console.log(store.games)
-//   let winCount = 0
-//   for (let i = 0; i < store.games.length; i++) {
-//     if (store.gameBoard[0] === store.player && store.gameBoard[1] === store.player && store.gameBoard[2] === store.player) {
-//       winCount = winCount + 1
-//     } else if (store.gameBoard[3] === store.player && store.gameBoard[4] === store.player && store.gameBoard[5] === store.player) {
-//       winCount = winCount + 1
-//     } else if (store.gameBoard[6] === store.player && store.gameBoard[7] === store.player && store.gameBoard[8] === store.player) {
-//       winCount = winCount + 1
-//     } else if (store.gameBoard[0] === store.player && store.gameBoard[3] === store.player && store.gameBoard[6] === store.player) {
-//       winCount = winCount + 1
-//     } else if (store.gameBoard[1] === store.player && store.gameBoard[4] === store.player && store.gameBoard[7] === store.player) {
-//       winCount = winCount + 1
-//     } else if (store.gameBoard[2] === store.player && store.gameBoard[5] === store.player && store.gameBoard[8] === store.player) {
-//       winCount = winCount + 1
-//     } else if (store.gameBoard[0] === store.player && store.gameBoard[4] === store.player && store.gameBoard[8] === store.player) {
-//       winCount = winCount + 1
-//     } else if (store.gameBoard[2] === store.player && store.gameBoard[4] === store.player && store.gameBoard[6] === store.player) {
-//       winCount = winCount + 1
-//     } else if (store.gameBoard.includes('') === false) {
-//       console.log('not counted as a win', winCount)
-//     }
-//   }
-// }
 
 module.exports = {
   switchPlayer,
@@ -139,6 +163,5 @@ module.exports = {
   moveNotAllowed,
   gameReset,
   grabOverGames,
-  test
-  // calculateWinsNumber
+  calculateWinsNumber
 }
