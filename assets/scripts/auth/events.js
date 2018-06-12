@@ -1,9 +1,9 @@
 'use strict'
-// const store = require('../store')
 const getFormFields = require('../../../lib/get-form-fields')
 const authApi = require('./api')
 const authUi = require('./ui')
 const gameLogic = require('../game/game-logic')
+const store = require('../store')
 // const gameApi = require('../game/api')
 
 const onSignUp = (event) => {
@@ -25,6 +25,7 @@ const onSignInX = (event) => {
     .then(authUi.signInSuccessX)
     .then(gameLogic.grabOverGames)
     .then(gameLogic.calculateWinsNumberX)
+    .then(() => $('#player-x-wins').text(`You have won ${store.player_x.wins} games!!`))
     .catch(authUi.signInError)
 }
 const onSignInO = (event) => {
@@ -36,6 +37,7 @@ const onSignInO = (event) => {
     .then(authUi.signInSuccessO)
     .then(gameLogic.grabOverGames)
     .then(gameLogic.calculateWinsNumberO)
+    .then(() => $('#player-o-wins').text(`You have won ${store.player_o.wins} games!!`))
     .catch(authUi.signInError)
 }
 

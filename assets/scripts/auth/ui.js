@@ -28,7 +28,7 @@ const signInSuccessX = (response) => {
   $('.player-x-log-out').css('visibility', 'visible')
   $('.player-x-sign-in').css('visibility', 'hidden')
   $('#player-x-info').text(store.player_x.email)
-  $('#player-x-wins').text(`You have won ${store.player_x.wins} games!!`)
+  // $('#player-x-wins').text(`You have won ${store.player_x.wins} games!!`)
 }
 const signInSuccessO = (response) => {
   store.player_o = response.user
@@ -39,7 +39,7 @@ const signInSuccessO = (response) => {
   $('.player-o-log-out').css('visibility', 'visible')
   $('.player-o-sign-in').css('visibility', 'hidden')
   $('#player-o-info').text(store.player_o.email)
-  $('#player-o-wins').text(`You have won ${store.player_o.wins} games!!`)
+  // $('#player-o-wins').text(`You have won ${store.player_o.wins} games!!`)
 }
 
 const changePasswordSuccessX = (response) => {
