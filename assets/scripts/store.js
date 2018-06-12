@@ -1,7 +1,7 @@
 'use strict'
 
 const store = {
-  player: 'x'
+  player: "x"
 }
 
 module.exports = {

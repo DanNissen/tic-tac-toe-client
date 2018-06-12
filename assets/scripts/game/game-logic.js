@@ -28,10 +28,10 @@ const markCell = (cellId) => {
 }
 
 const switchPlayer = () => {
-  if (store.player === 'x') {
-    store.player = 'o'
-  } else if (store.player === 'o') {
-    store.player = 'x'
+  if (store.player === "x") {
+    store.player = "o"
+  } else if (store.player === "o") {
+    store.player = "x"
   }
 }
 

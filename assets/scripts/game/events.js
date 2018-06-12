@@ -11,6 +11,9 @@ const onClick = () => {
   const cellId = event.target.id
   if (gameLogic.isEmpty(cellId)) {
     gameLogic.markCell(cellId)
+    gameApi.updateGame(cellId)
+      .then(gameUi.updateGameSuccess)
+      .catch(gameUi.updateGameError)
     // console.log(store.gameBoard)
     gameLogic.checkForWin()
     gameLogic.switchPlayer()
@@ -28,8 +31,10 @@ const onPlayAgain = () => {
 
 const onStartGame = () => {
   console.log('you have started a new game')
-  $('.game-board').css('visibility', 'visible')
   store.player = 'x'
+  gameApi.createGame()
+    .then(gameUi.createGameSuccess)
+    .catch(gameUi.createGameError)
 }
 
 module.exports = {
