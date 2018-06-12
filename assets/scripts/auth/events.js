@@ -1,9 +1,10 @@
 'use strict'
 // const store = require('../store')
-
 const getFormFields = require('../../../lib/get-form-fields')
 const authApi = require('./api')
 const authUi = require('./ui')
+const gameLogic = require('../game/game-logic')
+// const gameApi = require('../game/api')
 
 const onSignUp = (event) => {
   event.preventDefault()
@@ -22,6 +23,9 @@ const onSignInX = (event) => {
   console.log('data is', data)
   authApi.signInX(data)
     .then(authUi.signInSuccessX)
+    .then(gameLogic.grabOverGames)
+    .then(gameLogic.test)
+    .then(gameLogic.calculateWinsNumber)
     .catch(authUi.signInError)
 }
 const onSignInO = (event) => {

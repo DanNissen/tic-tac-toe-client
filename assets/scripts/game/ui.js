@@ -1,9 +1,9 @@
 // const gameLogic = require('./game-logic')
 const store = require('../store')
+// const gameApi = require('./api')
 
 const winMessage = () => {
   $('#winner').modal('show')
-  // console.log(store.player)
   $('#winning-player').text(`Winner is ${store.player}`)
 }
 
@@ -22,12 +22,22 @@ const createGameError = (createGameError) => {
   console.log('that was not successful try again')
 }
 
-const updateGameSuccess = () => {
-  console.log('game update successful')
+const updateGameSuccess = (response) => {
+  console.log('game update successful', response)
 }
 
 const updateGameError = () => {
   console.log('game update failed')
+}
+
+const getGamesSuccess = (response) => {
+  console.log('response it', response)
+  store.games = response
+  console.log('you successfully got the games', store.games)
+}
+
+const getGamesError = (response) => {
+  console.log('you did not get the games', response)
 }
 
 module.exports = {
@@ -36,5 +46,7 @@ module.exports = {
   createGameSuccess,
   createGameError,
   updateGameSuccess,
-  updateGameError
+  updateGameError,
+  getGamesSuccess,
+  getGamesError
 }

@@ -1,7 +1,7 @@
 'use strict'
 const store = require('../store')
 
-const getFormFields = require('../../../lib/get-form-fields')
+// const getFormFields = require('../../../lib/get-form-fields')
 const gameApi = require('./api')
 const gameUi = require('./ui')
 const gameLogic = require('./game-logic')
@@ -13,10 +13,9 @@ const onClick = () => {
     gameLogic.markCell(cellId)
     gameApi.updateGame(cellId)
       .then(gameUi.updateGameSuccess)
+      .then(() => gameLogic.checkForWin(cellId))
+      .then(gameLogic.switchPlayer)
       .catch(gameUi.updateGameError)
-    // console.log(store.gameBoard)
-    gameLogic.checkForWin()
-    gameLogic.switchPlayer()
   } else {
     gameLogic.moveNotAllowed()
   }
@@ -27,6 +26,9 @@ const onPlayAgain = () => {
   gameLogic.gameReset()
   $('#draw').modal('hide')
   $('#winner').modal('hide')
+  gameApi.createGame()
+    .then(gameUi.createGameSuccess)
+    .catch(gameUi.createGameError)
 }
 
 const onStartGame = () => {
