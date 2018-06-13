@@ -23,7 +23,7 @@ const onSignInX = (event) => {
   console.log('data is', data)
   authApi.signInX(data)
     .then(authUi.signInSuccessX)
-    .then(gameLogic.grabOverGames)
+    .then(gameLogic.grabOverGamesX)
     .then(gameLogic.calculateWinsNumberX)
     .then(() => $('#player-x-wins').text(`You have won ${store.player_x.wins} games!!`))
     .catch(authUi.signInError)
@@ -35,7 +35,7 @@ const onSignInO = (event) => {
   console.log('data is', data)
   authApi.signInO(data)
     .then(authUi.signInSuccessO)
-    .then(gameLogic.grabOverGames)
+    .then(gameLogic.grabOverGamesO)
     .then(gameLogic.calculateWinsNumberO)
     .then(() => $('#player-o-wins').text(`You have won ${store.player_o.wins} games!!`))
     .catch(authUi.signInError)
@@ -68,7 +68,7 @@ const onLogOutX = (event) => {
     .catch(authUi.logOutError)
 }
 const onLogOutO = (event) => {
-  console.log('the log out player x button was clicked')
+  console.log('the log out player o button was clicked')
   event.preventDefault()
   authApi.logOutO()
     .then(authUi.logOutSuccessO)
