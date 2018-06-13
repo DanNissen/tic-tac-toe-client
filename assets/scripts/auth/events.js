@@ -30,7 +30,7 @@ const onSignInX = (event) => {
 }
 const onSignInO = (event) => {
   event.preventDefault()
-  console.log('Player X sign in form clicked')
+  console.log('Player O sign in form clicked')
   const data = getFormFields(event.target)
   console.log('data is', data)
   authApi.signInO(data)

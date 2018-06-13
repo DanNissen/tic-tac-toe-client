@@ -16,6 +16,7 @@ const signUpError = (response) => {
 
 const signInError = () => {
   console.log('sign in error')
+  // $('.modal-body').text('Sorry, try again!')
   // add visual que for user to see
 }
 
@@ -28,7 +29,7 @@ const signInSuccessX = (response) => {
   $('.player-x-log-out').css('visibility', 'visible')
   $('.player-x-sign-in').css('visibility', 'hidden')
   $('#player-x-info').text(store.player_x.email)
-  // $('#player-x-wins').text(`You have won ${store.player_x.wins} games!!`)
+  $('#sign-in-x-form')[0].reset()
 }
 const signInSuccessO = (response) => {
   store.player_o = response.user
@@ -39,7 +40,7 @@ const signInSuccessO = (response) => {
   $('.player-o-log-out').css('visibility', 'visible')
   $('.player-o-sign-in').css('visibility', 'hidden')
   $('#player-o-info').text(store.player_o.email)
-  // $('#player-o-wins').text(`You have won ${store.player_o.wins} games!!`)
+  $('#sign-in-o-form')[0].reset()
 }
 
 const changePasswordSuccessX = (response) => {
