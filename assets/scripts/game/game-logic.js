@@ -83,8 +83,9 @@ const checkForWin = (cellId) => {
 }
 
 const moveNotAllowed = () => {
-  console.log('sorry that is not allowed')
+  // console.log('sorry that is not allowed')
   // do something with ui to show user that the click is not allowed
+  $('#error').modal('show')
 }
 
 const gameReset = () => {
@@ -95,21 +96,21 @@ const gameReset = () => {
 }
 
 const grabOverGamesX = (response) => {
-  console.log(store.player_x)
+  // console.log(store.player_x)
   return gameApi.getGameByUserOver()
     .then(gameUi.getGamesSuccess)
     .catch(gameUi.getGamesError)
 }
 
 const grabOverGamesO = (response) => {
-  console.log(store.player_o)
+  // console.log(store.player_o)
   return gameApi.getGameByUserOver()
     .then(gameUi.getGamesSuccess)
     .catch(gameUi.getGamesError)
 }
 
 const calculateWinsNumberX = () => {
-  console.log(store.games)
+  // console.log(store.games)
   let winCount = 0
   let checkValue = 'x'
   for (let i = 0; i < store.games.games.length; i++) {
@@ -125,7 +126,7 @@ const calculateWinsNumberX = () => {
     if (store.games.games[i].cells[0] === checkValue && store.games.games[i].cells[1] === checkValue && store.games.games[i].cells[2] === checkValue) {
       winCount = winCount + 1
       store.player_x.wins = winCount
-      console.log(store.player_x.wins)
+      // console.log(store.player_x.wins)
     } else if (store.games.games[i].cells[3] === checkValue && store.games.games[i].cells[4] === checkValue && store.games.games[i].cells[5] === checkValue) {
       winCount = winCount + 1
       store.player_x.wins = winCount
@@ -163,7 +164,7 @@ const calculateWinsNumberX = () => {
 }
 
 const calculateWinsNumberO = () => {
-  console.log(store.games)
+  // console.log(store.games)
   let winCountO = 0
   let checkValue = 'x'
   for (let i = 0; i < store.games.games.length; i++) {

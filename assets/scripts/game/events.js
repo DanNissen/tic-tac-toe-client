@@ -22,7 +22,7 @@ const onClick = () => {
 }
 
 const onPlayAgain = () => {
-  console.log('user clicked play again')
+  // console.log('user clicked play again')
   gameLogic.gameReset()
   $('#draw').modal('hide')
   $('#winner').modal('hide')
@@ -32,7 +32,7 @@ const onPlayAgain = () => {
 }
 
 const onStartGame = () => {
-  console.log('you have started a new game')
+  // console.log('you have started a new game')
   store.player = 'x'
   gameApi.createGame()
     .then(gameUi.createGameSuccess)

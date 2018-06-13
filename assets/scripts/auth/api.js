@@ -3,7 +3,7 @@ const store = require('../store')
 const config = require('../config')
 
 const signUp = (data) => {
-  console.log('data passed to api is', data)
+  // console.log('data passed to api is', data)
   return $.ajax({
     method: 'POST',
     url: config.apiUrl + 'sign-up',
@@ -12,7 +12,7 @@ const signUp = (data) => {
 }
 
 const signInX = (data) => {
-  console.log('data passed to sign in api is', data)
+  // console.log('data passed to sign in api is', data)
   return $.ajax({
     method: 'POST',
     url: config.apiUrl + 'sign-in',
@@ -20,7 +20,7 @@ const signInX = (data) => {
   })
 }
 const signInO = (data) => {
-  console.log('data passed to sign in api is', data)
+  // console.log('data passed to sign in api is', data)
   return $.ajax({
     method: 'POST',
     url: config.apiUrl + 'sign-in',
@@ -29,7 +29,7 @@ const signInO = (data) => {
 }
 
 const changePasswordX = (data) => {
-  console.log('token is ', store.player_x.token)
+  // console.log('token is ', store.player_x.token)
   return $.ajax({
     method: 'PATCH',
     url: config.apiUrl + 'change-password',
@@ -40,7 +40,7 @@ const changePasswordX = (data) => {
   })
 }
 const changePasswordO = (data) => {
-  console.log('token is ', store.player_o.token)
+  // console.log('token is ', store.player_o.token)
   return $.ajax({
     method: 'PATCH',
     url: config.apiUrl + 'change-password',
@@ -52,7 +52,7 @@ const changePasswordO = (data) => {
 }
 
 const logOutX = () => {
-  console.log('token is ', store.player_x.token)
+  // console.log('token is ', store.player_x.token)
   return $.ajax({
     method: 'DELETE',
     url: config.apiUrl + 'sign-out',
@@ -62,7 +62,7 @@ const logOutX = () => {
   })
 }
 const logOutO = () => {
-  console.log('token is ', store.player_o.token)
+  // console.log('token is ', store.player_o.token)
   return $.ajax({
     method: 'DELETE',
     url: config.apiUrl + 'sign-out',
