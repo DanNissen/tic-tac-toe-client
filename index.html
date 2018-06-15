@@ -15,6 +15,18 @@
 
 <body>
   <nav class="navbar navbar-light bg-light">
+    <button type="button" class="btn btn-primary player-x-sign-up" data-toggle="modal" data-target="#sign-up">
+      Sign Up
+    </button>
+    <button type="button" class="btn btn-primary player-x-sign-in" data-toggle="modal" data-target="#sign-in-x">
+      Sign In
+    </button>
+    <button type="button" class="btn btn-primary player-x-change-password" data-toggle="modal" data-target="#change-password-x">
+      change-password
+    </button>
+    <button type="button" class="btn btn-primary player-x-log-out" data-toggle="modal" data-target="#log-out-x">
+      log-out
+    </button>
     <button id="start-game" type="button" class="btn btn-primary start-game">Start Game</button>
   </nav>
 
@@ -26,18 +38,6 @@
         PLAYER X <br>
         <p id="player-x-info"></p>
         <p id="player-x-wins"></p>
-        <button type="button" class="btn btn-primary player-x-sign-up" data-toggle="modal" data-target="#sign-up">
-          Sign Up
-        </button>
-        <button type="button" class="btn btn-primary player-x-sign-in" data-toggle="modal" data-target="#sign-in-x">
-          Sign In
-        </button> <br>
-        <button type="button" class="btn btn-primary player-x-change-password" data-toggle="modal" data-target="#change-password-x">
-          change-password
-        </button> <br>
-        <button type="button" class="btn btn-primary player-x-log-out" data-toggle="modal" data-target="#log-out-x">
-          log-out
-        </button>
       </div>
       <div id="game-board" class="h-100 game-board col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
         <div class="top-row">
@@ -57,21 +57,8 @@
         </div>
       </div>
       <div class="h-100 col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 player-o-content">
-        <!-- PLAYER O <br>
-        <p id="player-o-info"></p>
-        <p id="player-o-wins"></p>
-        <button type="button" class="btn btn-primary player-o-sign-up" data-toggle="modal" data-target="#sign-up">
-          Sign Up
-        </button>
-        <button type="button" class="btn btn-primary player-o-sign-in" data-toggle="modal" data-target="#sign-in-o">
-          Sign In
-        </button> <br>
-        <button type="button" class="btn btn-primary player-o-change-password" data-toggle="modal" data-target="#change-password-o">
-          change-password
-        </button> <br>
-        <button type="button" class="btn btn-primary player-o-log-out" data-toggle="modal" data-target="#log-out-o">
-          log-out
-        </button> -->
+        <div> Game Messages </div>
+        <div id="game-messages"></div>
       </div>
     </div>
   </div>

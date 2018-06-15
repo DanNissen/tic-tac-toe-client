@@ -30,6 +30,7 @@ const signInSuccessX = (response) => {
   // add visual que for user to see
   $('.player-x-change-password').css('visibility', 'visible')
   $('.player-x-log-out').css('visibility', 'visible')
+  $('.start-game').css('visibility', 'visible')
   $('.player-x-sign-in').css('visibility', 'hidden')
   $('.player-x-sign-up').css('visibility', 'hidden')
   $('#player-x-info').text(store.player_x.email)
