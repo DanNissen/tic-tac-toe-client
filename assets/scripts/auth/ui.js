@@ -53,12 +53,21 @@ const logOutSuccessX = (response) => {
   $('#log-out-x').modal('hide')
   $('.player-x-change-password').css('visibility', 'hidden')
   $('.player-x-log-out').css('visibility', 'hidden')
+  $('.start-game').css('visibility', 'hidden')
   $('.player-x-sign-in').css('visibility', 'visible')
   $('.player-x-sign-up').css('visibility', 'visible')
   $('#player-x-info').text('')
   $('#player-x-wins').text('')
+  $('#game-board').css('visibility', 'hidden')
+  $('.game-cells').css('visibility', 'hidden')
+  $('#whose-turn').text('')
 }
 
+const resetAllForms = () => {
+  $('#change-password-x-form')[0].reset()
+  $('#sign-in-x-form')[0].reset()
+  $('#sign-up-form')[0].reset()
+}
 const logOutError = (logOutError) => {
   // console.log('signOutError is', logOutError)
   $('#error').modal('show')
@@ -72,5 +81,6 @@ module.exports = {
   changePasswordSuccessX,
   changePasswordError,
   logOutSuccessX,
-  logOutError
+  logOutError,
+  resetAllForms
 }

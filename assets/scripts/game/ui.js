@@ -17,6 +17,7 @@ const createGameSuccess = (response) => {
   $('.game-cells').css('visibility', 'visible')
   store.game = response.game
   // console.log(store.game)
+  $('#whose-turn').text(`PLAYER ${store.player}'s TURN`)
 }
 
 const createGameError = (createGameError) => {
@@ -25,7 +26,8 @@ const createGameError = (createGameError) => {
 }
 
 const updateGameSuccess = (response) => {
-  // console.log('game update successful', response)
+  // console.log('game updated')
+  // $('#game-messages').text(`Move saved successfully`)
 }
 
 const updateGameError = () => {

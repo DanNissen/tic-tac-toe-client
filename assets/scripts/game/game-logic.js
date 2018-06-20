@@ -31,6 +31,7 @@ const switchPlayer = () => {
   } else if (store.player === 'o') {
     store.player = 'x'
   }
+  $('#whose-turn').text(`PLAYER ${store.player}'s TURN`)
 }
 
 const checkForWin = (cellId) => {
@@ -109,8 +110,6 @@ const calculateWinsNumberX = () => {
   let checkValue = 'x'
   store.player_x.wins = winCount
   for (let i = 0; i < store.games.games.length; i++) {
-    // console.log(store.player_x.email)
-    // console.log(store.games.games[i].player_o)
     if (store.games.games[i].player_o === null) {
       checkValue = 'x'
     } else if (store.player_x.email === store.games.games[i].player_o.email) {
@@ -155,7 +154,7 @@ const calculateWinsNumberX = () => {
       store.player_x.wins = winCount
       // console.log(store.player_x.wins)
     }
-  }
+  } //console.log('wins is', store.player_x.wins)
 }
 
 module.exports = {

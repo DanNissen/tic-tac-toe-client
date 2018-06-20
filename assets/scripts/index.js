@@ -4,6 +4,7 @@
 // const example = require('./example')
 const authEvents = require('./auth/events')
 const gameEvents = require('./game/events')
+const gameUi = require('./auth/ui')
 // use require without a reference to ensure a file is bundled
 // require('./example')
 
@@ -25,4 +26,7 @@ $(() => {
   $('#start-game').click(gameEvents.onStartGame)
   $('#winner').on('hidden.bs.modal', gameEvents.onHideBoard)
   $('#draw').on('hidden.bs.modal', gameEvents.onHideBoard)
+  $('#sign-up').on('hidden.bs.modal', gameUi.resetAllForms)
+  $('#sign-in-x').on('hidden.bs.modal', gameUi.resetAllForms)
+  $('#change-password-x').on('hidden.bs.modal', gameUi.resetAllForms)
 })

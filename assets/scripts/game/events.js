@@ -7,7 +7,6 @@ const gameUi = require('./ui')
 const gameLogic = require('./game-logic')
 
 const onClick = () => {
-  // console.log(store.player)
   const cellId = event.target.id
   if (gameLogic.isEmpty(cellId)) {
     gameLogic.markCell(cellId)
@@ -42,6 +41,7 @@ const onStartGame = () => {
 const onHideBoard = () => {
   gameLogic.gameReset()
   gameUi.hideBoard()
+  $('#player-x-wins').text(`You have won ${store.player_x.wins} games!!`)
 }
 
 module.exports = {
