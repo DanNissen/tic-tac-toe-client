@@ -5,6 +5,8 @@ const store = require('../store')
 const winMessage = () => {
   $('#winner').modal('show')
   $('#winning-player').text(`Winner is ${store.player}`)
+  store.player_x.wins++
+  $('#player-x-wins').text(`You have won ${store.player_x.wins} games!!`)
 }
 
 const drawMessage = () => {
@@ -12,43 +14,38 @@ const drawMessage = () => {
 }
 
 const createGameSuccess = (response) => {
-  // console.log('you successfully created a game!', response)
   $('.game-board').css('visibility', 'visible')
   $('.game-cells').css('visibility', 'visible')
   store.game = response.game
-  // console.log(store.game)
   $('#whose-turn').text(`PLAYER ${store.player}'s TURN`)
+  $('#game-messages').text('')
 }
 
 const createGameError = (createGameError) => {
-  // console.log('that was not successful try again')
   $('#error').modal('show')
 }
 
 const updateGameSuccess = (response) => {
-  // console.log('game updated')
   // $('#game-messages').text(`Move saved successfully`)
 }
 
 const updateGameError = () => {
-  // console.log('game update failed')
   $('#error').modal('show')
 }
 
 const getGamesSuccess = (response) => {
-  // console.log('response it', response)
   store.games = response
-  // console.log('you successfully got the games', store.games)
 }
 
 const getGamesError = (response) => {
-  // console.log('you did not get the games', response)
   $('#error').modal('show')
 }
 
 const hideBoard = () => {
   $('#game-board').css('visibility', 'hidden')
   $('.game-cells').css('visibility', 'hidden')
+  $('#whose-turn').text('')
+  $('#game-messages').text('Please click start game to play')
 }
 
 module.exports = {

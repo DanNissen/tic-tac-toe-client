@@ -21,7 +21,6 @@ const onClick = () => {
 }
 
 const onPlayAgain = () => {
-  // console.log('user clicked play again')
   gameLogic.gameReset()
   $('#draw').modal('hide')
   $('#winner').modal('hide')
@@ -31,7 +30,6 @@ const onPlayAgain = () => {
 }
 
 const onStartGame = () => {
-  // console.log('you have started a new game')
   gameLogic.gameReset()
   gameApi.createGame()
     .then(gameUi.createGameSuccess)
@@ -41,7 +39,6 @@ const onStartGame = () => {
 const onHideBoard = () => {
   gameLogic.gameReset()
   gameUi.hideBoard()
-  $('#player-x-wins').text(`You have won ${store.player_x.wins} games!!`)
 }
 
 module.exports = {

@@ -14,12 +14,6 @@ const createGame = () => {
 }
 
 const updateGame = (cellId) => {
-  // console.log('you triggered updateGame function')
-  // console.log(store.player_x.token)
-  // console.log((cellId - 1))
-  // console.log(store.player)
-  // console.log(store.player_x)
-  // console.log(store.player_o)
   const data = {
     'game': {
       'cell': {

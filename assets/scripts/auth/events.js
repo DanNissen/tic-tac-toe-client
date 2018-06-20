@@ -8,9 +8,7 @@ const store = require('../store')
 
 const onSignUp = (event) => {
   event.preventDefault()
-  // console.log('sign up form clicked')
   const data = getFormFields(event.target)
-  // console.log('data is', data)
   authApi.signUp(data)
     .then(authUi.signUpSuccess)
     .catch(authUi.signUpError)
@@ -18,9 +16,7 @@ const onSignUp = (event) => {
 
 const onSignInX = (event) => {
   event.preventDefault()
-  // console.log('Player X sign in form clicked')
   const data = getFormFields(event.target)
-  // console.log('data is', data)
   authApi.signInX(data)
     .then(authUi.signInSuccessX)
     .then(gameLogic.grabOverGamesX)
