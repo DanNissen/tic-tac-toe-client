@@ -28,18 +28,6 @@ const onSignInX = (event) => {
     .then(() => $('#player-x-wins').text(`You have won ${store.player_x.wins} games!!`))
     .catch(authUi.signInError)
 }
-// const onSignInO = (event) => {
-//   event.preventDefault()
-//   // console.log('Player O sign in form clicked')
-//   const data = getFormFields(event.target)
-//   // console.log('data is', data)
-//   authApi.signInO(data)
-//     .then(authUi.signInSuccessO)
-//     .then(gameLogic.grabOverGamesO)
-//     .then(gameLogic.calculateWinsNumberO)
-//     .then(() => $('#player-o-wins').text(`You have won ${store.player_o.wins} games!!`))
-//     .catch(authUi.signInError)
-// }
 
 const onChangePasswordX = (event) => {
   event.preventDefault()
@@ -50,15 +38,6 @@ const onChangePasswordX = (event) => {
     .then(authUi.changePasswordSuccessX)
     .catch(authUi.changePasswordError)
 }
-// const onChangePasswordO = (event) => {
-//   event.preventDefault()
-//   // console.log('the change password form for player o was submitted')
-//   const data = getFormFields(event.target)
-//   // console.log('data is', data)
-//   authApi.changePasswordO(data)
-//     .then(authUi.changePasswordSuccessO)
-//     .catch(authUi.changePasswordError)
-// }
 
 const onLogOutX = (event) => {
   // console.log('the log out player x button was clicked')
@@ -67,20 +46,10 @@ const onLogOutX = (event) => {
     .then(authUi.logOutSuccessX)
     .catch(authUi.logOutError)
 }
-// const onLogOutO = (event) => {
-//   // console.log('the log out player o button was clicked')
-//   event.preventDefault()
-//   authApi.logOutO()
-//     .then(authUi.logOutSuccessO)
-//     .catch(authUi.logOutError)
-// }
 
 module.exports = {
   onSignUp,
   onSignInX,
   onChangePasswordX,
   onLogOutX
-  // onSignInO,
-  // onChangePasswordO,
-  // onLogOutO
 }

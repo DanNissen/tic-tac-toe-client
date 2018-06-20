@@ -33,14 +33,20 @@ const onPlayAgain = () => {
 
 const onStartGame = () => {
   // console.log('you have started a new game')
-  store.player = 'x'
+  gameLogic.gameReset()
   gameApi.createGame()
     .then(gameUi.createGameSuccess)
     .catch(gameUi.createGameError)
 }
 
+const onHideBoard = () => {
+  gameLogic.gameReset()
+  gameUi.hideBoard()
+}
+
 module.exports = {
   onClick,
   onPlayAgain,
-  onStartGame
+  onStartGame,
+  onHideBoard
 }

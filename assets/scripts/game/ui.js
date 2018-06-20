@@ -14,6 +14,7 @@ const drawMessage = () => {
 const createGameSuccess = (response) => {
   // console.log('you successfully created a game!', response)
   $('.game-board').css('visibility', 'visible')
+  $('.game-cells').css('visibility', 'visible')
   store.game = response.game
   // console.log(store.game)
 }
@@ -43,6 +44,11 @@ const getGamesError = (response) => {
   $('#error').modal('show')
 }
 
+const hideBoard = () => {
+  $('#game-board').css('visibility', 'hidden')
+  $('.game-cells').css('visibility', 'hidden')
+}
+
 module.exports = {
   winMessage,
   drawMessage,
@@ -51,5 +57,6 @@ module.exports = {
   updateGameSuccess,
   updateGameError,
   getGamesSuccess,
-  getGamesError
+  getGamesError,
+  hideBoard
 }

@@ -23,4 +23,6 @@ $(() => {
   $('#won-play-again').click(gameEvents.onPlayAgain)
   $('#draw-play-again').click(gameEvents.onPlayAgain)
   $('#start-game').click(gameEvents.onStartGame)
+  $('#winner').on('hidden.bs.modal', gameEvents.onHideBoard)
+  $('#draw').on('hidden.bs.modal', gameEvents.onHideBoard)
 })
