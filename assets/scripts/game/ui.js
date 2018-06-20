@@ -5,7 +5,9 @@ const store = require('../store')
 const winMessage = () => {
   $('#winner').modal('show')
   $('#winning-player').text(`Winner is ${store.player}`)
-  store.player_x.wins++
+  if (store.player === 'x') {
+    store.player_x.wins++
+  }
   $('#player-x-wins').text(`You have won ${store.player_x.wins} games!!`)
 }
 
