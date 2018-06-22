@@ -10,10 +10,12 @@ const signUpSuccess = (response) => {
 
 const signUpError = (response) => {
   $('#error').modal('show')
+  $('#sign-up-form')[0].reset()
 }
 
 const signInError = () => {
   $('#error').modal('show')
+  $('#sign-in-x-form')[0].reset()
 }
 
 const signInSuccessX = (response) => {
@@ -36,6 +38,7 @@ const changePasswordSuccessX = (response) => {
 
 const changePasswordError = (changePasswordError) => {
   $('#error').modal('show')
+  $('#change-password-x-form')[0].reset()
 }
 
 const logOutSuccessX = (response) => {
