@@ -6,6 +6,8 @@ const gameLogic = require('../game/game-logic')
 const signUpSuccess = (response) => {
   $('#sign-up-form')[0].reset()
   $('#sign-up').modal('hide')
+  $('#success').modal('show')
+  $('#success-message').text('Welcome! You have successfully registered. Please sign in to continue!')
 }
 
 const signUpError = (response) => {
@@ -34,6 +36,8 @@ const signInSuccessX = (response) => {
 const changePasswordSuccessX = (response) => {
   $('#change-password-x-form')[0].reset()
   $('#change-password-x').modal('hide')
+  $('#success').modal('show')
+  $('#success-message').text('Congrats, password changed successfully!')
 }
 
 const changePasswordError = (changePasswordError) => {
@@ -54,6 +58,7 @@ const logOutSuccessX = (response) => {
   $('.game-cells').css('visibility', 'hidden')
   $('#whose-turn').text('')
   $('#game-messages').text('')
+
 }
 
 const resetAllForms = () => {
